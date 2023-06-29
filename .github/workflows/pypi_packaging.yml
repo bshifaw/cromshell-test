@@ -4,19 +4,20 @@
 name: Publish to PyPi
 on:
   workflow_dispatch:
-    bump_version_type:
-      description: 'The type of version bump'
-      required: true
-      default: 'patch'
-      type: choice
-      options:
-        - patch
-        - minor
-        - major
-    release_notes:
-      description: "The content of git release notes"
-      required: false
-      type: string
+    inputs:
+      bump_version_type:
+        description: 'The type of version bump'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+      release_notes:
+        description: "The content of git release notes"
+        required: false
+        type: string
 
 jobs:
   # This job will bump the version number, in the files listed in
