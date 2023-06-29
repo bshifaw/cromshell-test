@@ -33,8 +33,9 @@ jobs:
       # in current branch (main) and writes it to a file called release_notes.txt
       id: release_notes
       run: |
-          if [ -n "${{ inputs.release_notes }}" ]; then
-            echo "${{ inputs.release_notes }}" > release_notes.txt
+          echo "${{ inputs.release_notes }}" > release_notes.txt
+          if [ -s release_notes.txt ]; then
+            pass
           else
             git log --format=%B -n 1 ${{ github.event.after }} > release_notes.txt
           fi
