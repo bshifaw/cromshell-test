@@ -35,7 +35,7 @@ jobs:
       run: |
           echo "${{ inputs.release_notes }}" > release_notes.txt
           if [ -s release_notes.txt ]; then
-            pass
+            : # Pass
           else
             git log --format=%B -n 1 ${{ github.event.after }} > release_notes.txt
           fi
