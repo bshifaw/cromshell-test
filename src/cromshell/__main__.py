@@ -22,7 +22,7 @@ from .update_server import command as update_server
 
 # Version number is automatically set via bumpversion.
 # DO NOT MODIFY:
-__version__ = "2.0.0"
+__version__ = "2.0.1"
 
 # Create a logger for this module:
 LOGGER = logging.getLogger(__name__)
