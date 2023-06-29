@@ -86,7 +86,7 @@ jobs:
       run: python3 -m build
 
     - name: Upload to TestPyPI
-      uses: pypa/gh-action-pypi-publish
+      uses: pypa/gh-action-pypi-publish@release/v1
       with:
         user: __token__
         password: ${{ secrets.Test_PYPI_TOKEN }}
